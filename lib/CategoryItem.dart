@@ -32,8 +32,8 @@ class CategoryItem extends StatelessWidget {
         height: _rowHeight,
         child: InkWell(
             borderRadius: _borderRadius,
-            splashColor: itemSplashColor,
-            highlightColor: itemSplashColor,
+            splashColor: itemSplashColor['splash'],
+            highlightColor: itemSplashColor['highlight'],
             onTap: () {
               _navigateToConvertor(context);
               print('i was tapped');
@@ -70,10 +70,11 @@ class CategoryItem extends StatelessWidget {
           backgroundColor: itemSplashColor,
         ),
         body: ConvertorScreen(
-          itemColor: itemSplashColor,
-          itemName: itemName,
+          color: itemSplashColor,
+          name: itemName,
           units: units,
         ),
+        resizeToAvoidBottomPadding: false,
       );
     }));
   }
